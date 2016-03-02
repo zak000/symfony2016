@@ -22,32 +22,32 @@ class __TwigTemplate_6171037309ae80cdeca46236df872dd1ff2f3fde0182424e053686f7742
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_14c5fde0ff7e5013ed15b5bedf52393008f7ed94ad1f7519b338f7d8a013df0b = $this->env->getExtension("native_profiler");
-        $__internal_14c5fde0ff7e5013ed15b5bedf52393008f7ed94ad1f7519b338f7d8a013df0b->enter($__internal_14c5fde0ff7e5013ed15b5bedf52393008f7ed94ad1f7519b338f7d8a013df0b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Page:contact.html.twig"));
+        $__internal_75f8fa4297d8458e606172eea6ea8092dcb49d68a2b32e9f55371c3db736228a = $this->env->getExtension("native_profiler");
+        $__internal_75f8fa4297d8458e606172eea6ea8092dcb49d68a2b32e9f55371c3db736228a->enter($__internal_75f8fa4297d8458e606172eea6ea8092dcb49d68a2b32e9f55371c3db736228a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Page:contact.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_14c5fde0ff7e5013ed15b5bedf52393008f7ed94ad1f7519b338f7d8a013df0b->leave($__internal_14c5fde0ff7e5013ed15b5bedf52393008f7ed94ad1f7519b338f7d8a013df0b_prof);
+        $__internal_75f8fa4297d8458e606172eea6ea8092dcb49d68a2b32e9f55371c3db736228a->leave($__internal_75f8fa4297d8458e606172eea6ea8092dcb49d68a2b32e9f55371c3db736228a_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_fbce9e2f6f46b25523cc468518180648ec8e424aa9ac2d0670eecc27472eb908 = $this->env->getExtension("native_profiler");
-        $__internal_fbce9e2f6f46b25523cc468518180648ec8e424aa9ac2d0670eecc27472eb908->enter($__internal_fbce9e2f6f46b25523cc468518180648ec8e424aa9ac2d0670eecc27472eb908_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_74674b1689d3c38b1b6cdbe0b6abf9ad3365c6d315283a813f24f54293435f62 = $this->env->getExtension("native_profiler");
+        $__internal_74674b1689d3c38b1b6cdbe0b6abf9ad3365c6d315283a813f24f54293435f62->enter($__internal_74674b1689d3c38b1b6cdbe0b6abf9ad3365c6d315283a813f24f54293435f62_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Contact";
         
-        $__internal_fbce9e2f6f46b25523cc468518180648ec8e424aa9ac2d0670eecc27472eb908->leave($__internal_fbce9e2f6f46b25523cc468518180648ec8e424aa9ac2d0670eecc27472eb908_prof);
+        $__internal_74674b1689d3c38b1b6cdbe0b6abf9ad3365c6d315283a813f24f54293435f62->leave($__internal_74674b1689d3c38b1b6cdbe0b6abf9ad3365c6d315283a813f24f54293435f62_prof);
 
     }
 
     // line 6
     public function block_body($context, array $blocks = array())
     {
-        $__internal_291e40146c55c420cb5f45f07721164951ffa1b81f6dc47da54a69b84298036c = $this->env->getExtension("native_profiler");
-        $__internal_291e40146c55c420cb5f45f07721164951ffa1b81f6dc47da54a69b84298036c->enter($__internal_291e40146c55c420cb5f45f07721164951ffa1b81f6dc47da54a69b84298036c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_d475ddde693d8485971c206530b0fad951ef62f3a7b82f60521682d7ff9f3837 = $this->env->getExtension("native_profiler");
+        $__internal_d475ddde693d8485971c206530b0fad951ef62f3a7b82f60521682d7ff9f3837->enter($__internal_d475ddde693d8485971c206530b0fad951ef62f3a7b82f60521682d7ff9f3837_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
         echo "    <header>
@@ -93,7 +93,7 @@ class __TwigTemplate_6171037309ae80cdeca46236df872dd1ff2f3fde0182424e053686f7742
     </form>
 ";
         
-        $__internal_291e40146c55c420cb5f45f07721164951ffa1b81f6dc47da54a69b84298036c->leave($__internal_291e40146c55c420cb5f45f07721164951ffa1b81f6dc47da54a69b84298036c_prof);
+        $__internal_d475ddde693d8485971c206530b0fad951ef62f3a7b82f60521682d7ff9f3837->leave($__internal_d475ddde693d8485971c206530b0fad951ef62f3a7b82f60521682d7ff9f3837_prof);
 
     }
 
