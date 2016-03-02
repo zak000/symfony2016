@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 a6b757,::1,GET,http://localhost:8888/symfony2016/symfony2016/blog/web/app_dev.php/contact,1456918152,,200
 699e83,::1,GET,http://localhost:8888/symfony2016/symfony2016/blog/web/app_dev.php/,1456918158,,200
 29b7b1,::1,GET,http://localhost:8888/symfony2016/symfony2016/blog/web/app_dev.php/,1456918186,,200
@@ -76,3 +77,30 @@ e17b70,::1,GET,http://localhost:8888/symfony2016/symfony2016/blog/web/app_dev.ph
 e1bc02,::1,POST,http://localhost:8888/symfony2016/symfony2016/blog/web/app_dev.php/contact,1456929167,,302
 ea9bf0,::1,GET,http://localhost:8888/symfony2016/symfony2016/blog/web/app_dev.php/contact,1456929167,,200
 6bcade,::1,GET,http://localhost:8888/symfony2016/symfony2016/blog/web/app_dev.php/contact,1456932266,,200
+=======
+7e22f5,::1,GET,http://localhost:8888/blog/web/app_dev.php/,1456931833,,200
+ba1ec6,::1,GET,http://localhost:8888/blog/web/app_dev.php/login,1456931870,,200
+8ceb94,::1,GET,http://localhost:8888/blog/web/app_dev.php/login,1456931883,,200
+c4790c,::1,POST,http://localhost:8888/blog/web/app_dev.php/login_check,1456932609,,302
+b2e4cd,::1,GET,http://localhost:8888/blog/web/app_dev.php/login,1456932610,,200
+9bc9aa,::1,GET,http://localhost:8888/blog/web/app_dev.php/register,1456932769,,301
+0a73e4,::1,GET,http://localhost:8888/blog/web/app_dev.php/register/,1456932770,,200
+7a3d05,::1,POST,http://localhost:8888/blog/web/app_dev.php/register/,1456932793,,302
+b0e32f,::1,GET,http://localhost:8888/blog/web/app_dev.php/register/confirmed,1456932794,,200
+cf4929,::1,GET,http://localhost:8888/blog/web/app_dev.php/logout,1456932953,,302
+83766e,::1,GET,http://localhost:8888/blog/web/app_dev.php/,1456932954,,200
+86fb79,::1,GET,http://localhost:8888/blog/web/app_dev.php/,1456933772,,200
+902992,::1,GET,http://localhost:8888/blog/web/app_dev.php/,1456933831,,200
+e78a14,::1,GET,http://localhost:8888/blog/web/app_dev.php/login,1456933839,,200
+d4f65d,::1,GET,http://localhost:8888/blog/web/app_dev.php/register,1456933846,,301
+0b466f,::1,GET,http://localhost:8888/blog/web/app_dev.php/register/,1456933847,,200
+ae85b3,::1,GET,http://localhost:8888/blog/web/app_dev.php/profile/,1456934105,,302
+6f003d,::1,GET,http://localhost:8888/blog/web/app_dev.php/login,1456934105,,200
+0ea859,::1,POST,http://localhost:8888/blog/web/app_dev.php/login_check,1456934112,,302
+e466c8,::1,GET,http://localhost:8888/blog/web/app_dev.php/profile/,1456934113,,200
+343590,::1,GET,http://localhost:8888/blog/web/app_dev.php/resetting/,1456934133,9a2331,200
+9a2331,::1,GET,http://localhost:8888/blog/web/app_dev.php/resetting/,1456934133,,404
+66bf4c,::1,GET,http://localhost:8888/blog/web/app_dev.php/logout,1456934148,,302
+5b9d88,::1,GET,http://localhost:8888/blog/web/app_dev.php/,1456934148,,200
+50a85b,::1,GET,http://localhost:8888/blog/web/app_dev.php/login,1456934156,,200
+>>>>>>> b7e22dba78079e983dda5e2026e33787867e610f
