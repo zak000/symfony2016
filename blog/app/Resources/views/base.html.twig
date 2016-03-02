@@ -16,25 +16,27 @@
     </head>
     <body>
 <p>test</p>
+       <p>test2</p>
+       
         <section id="wrapper">
             <header id="header">
                 <div class="top">
-                    {% block navigation %}
-                        <nav>
-                            <ul class="navigation">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
-                    {% endblock %}
+    {% block navigation %}
+    <nav>
+        <ul class="navigation">
+            <li><a href="{{ path('BlogBundle_homepage') }}">Home</a></li>
+          <li><a >about</a></li>
+            <li><a href="{{ path('BlogBundle_contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+{% endblock %}
                 </div>
 
                 <hgroup>
                    </br>
                     </br>
                      </br>
-                    <h3>{% block blog_tagline %}<a href="#">Blog in Symfony2 by Alex Romain Zak Sidney</a>{% endblock %}</h3>
+                    <h3>{% block blog_tagline %}<!--<a href="#">Blog in Symfony2 by Alex Romain Zak Sidney</a>-->{% endblock %}</h3>
                 </hgroup>
             </header>
 

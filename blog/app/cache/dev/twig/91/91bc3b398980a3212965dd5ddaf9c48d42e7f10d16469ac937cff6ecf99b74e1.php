@@ -15,8 +15,8 @@ class __TwigTemplate_e1774417a5fa6bfa33a97e6a4c40e0fb69030394ab4f40c53236d5c3c4d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_eea3eb38ccb6ddebc2e3029741308e9f421d2d72dd385dfbd252a9e8ae49df4c = $this->env->getExtension("native_profiler");
-        $__internal_eea3eb38ccb6ddebc2e3029741308e9f421d2d72dd385dfbd252a9e8ae49df4c->enter($__internal_eea3eb38ccb6ddebc2e3029741308e9f421d2d72dd385dfbd252a9e8ae49df4c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Default:index.html.twig"));
+        $__internal_a728ab98c0e3b65af0a27a24895bc45aae0759456c45c81432db827e144bb0a6 = $this->env->getExtension("native_profiler");
+        $__internal_a728ab98c0e3b65af0a27a24895bc45aae0759456c45c81432db827e144bb0a6->enter($__internal_a728ab98c0e3b65af0a27a24895bc45aae0759456c45c81432db827e144bb0a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Default:index.html.twig"));
 
         // line 1
         echo "Hello World!
@@ -25,7 +25,7 @@ Hello ";
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
         echo "!";
         
-        $__internal_eea3eb38ccb6ddebc2e3029741308e9f421d2d72dd385dfbd252a9e8ae49df4c->leave($__internal_eea3eb38ccb6ddebc2e3029741308e9f421d2d72dd385dfbd252a9e8ae49df4c_prof);
+        $__internal_a728ab98c0e3b65af0a27a24895bc45aae0759456c45c81432db827e144bb0a6->leave($__internal_a728ab98c0e3b65af0a27a24895bc45aae0759456c45c81432db827e144bb0a6_prof);
 
     }
 
