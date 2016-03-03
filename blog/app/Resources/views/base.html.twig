@@ -18,59 +18,72 @@
 </head>
 
 <body>
-    <section id="wrapper">
-        <header id="header">
-            <div class="top">
-                {% block navigation %}
-                <nav>
-                    <ul class="navigation">
-                            <li>
-                                <a href="{{ path('BlogBundle_homepage') }}">Accueil</a>
-                            </li>
-                            <li>
-                                {% if app.user is not null %}
-                                   <a href="{{ path('BlogBundle_logout') }}">deconnexion</a>
-                                {% else %}
-                                    <a href="{{ path('BlogBundle_inscrption') }}">Inscription</a>
-                                {% endif %}
-                            </li>
-                            <li>
-                                {% if app.user is null %}
-                                    <a href="{{ path('BlogBundle_login') }}">Connection</a>
-                                {% endif%}
-                            </li>
-                            <li>
-                                {% if app.user is not null %}
-                                    <a href="{{ path('BlogBundle_profile') }}"> {{ app.user.username}}</a>
-                                {% endif %}
-                            </li>
-
-                            
-                            
-                    </ul>
-                </nav>
-                {% endblock %}
+    {% block navigation %}
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Blog Symfony2</a>
             </div>
-
-            <hgroup>
-                </br>
-                </br>
-                </br>
-                <h3>{% block blog_tagline %}<a href="#">Blog in Symfony2 by Alex Romain Zak Sidney</a>{% endblock %}</h3>
-            </hgroup>
-        </header>
-
-        <section class="main-col">
-            {% block body %}{% endblock %}
-        </section>
-        <aside class="sidebar">
-            {% block sidebar %}{% endblock %}
-        </aside>
-
-        <div id="footer">
-            {% block footer %} Symfony2 blog zak/alex/romain/sidney - created by {% endblock %}
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ path('BlogBundle_homepage') }}">Accueil</a></li>
+                    <li>
+                        {% if app.user is not null %}
+                           <a href="{{ path('BlogBundle_logout') }}">Déconnexion</a>
+                        {% else %}
+                            <a href="{{ path('BlogBundle_inscrption') }}">Inscription</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if app.user is null %}
+                            <a href="{{ path('BlogBundle_login') }}">Connexion</a>
+                        {% endif%}
+                    </li>
+                    <li>
+                        {% if app.user is not null %}
+                            <a href="{{ path('BlogBundle_profile') }}"> {{ app.user.username}}</a>
+                        {% endif %}
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catégories <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Catégorie 1</a></li>
+                            <li><a href="#">Catégorie 2</a></li>
+                            <li><a href="#">Catégorie 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </section>
+    </nav>
+    {% endblock %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                {% block body %}{% endblock %}
+                {% block blog_tagline %}{% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                {% block sidebar %}{% endblock %}
+            </div>
+        </div>
+
+        </br>
+        {% block footer %}
+        <footer id="footer">
+            Blog Symfony2 - Copyright by Alex, Romain, Zak et Sidney
+        </footer>
+        {% endblock %}
+    </div>
 
     {% block javascripts %}
         <script src="{{ asset('bundles/blog/js/jquery.min.js') }}"></script>
