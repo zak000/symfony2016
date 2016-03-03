@@ -1,0 +1,12 @@
+{% extends 'BlogBundle::layout.html.twig' %}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Créer Votre Compte</h1>
+    </header>
+    
+{{ render(controller('FOSUserBundle:Registration:register')) }}
+
+{% endblock %}

@@ -13,4 +13,19 @@ class PageController extends Controller
     {
         return $this->render('BlogBundle:Page:index.html.twig');
     }
+    
+    public function registerAction()
+    {
+        return $this->render('BlogBundle:Page:register.html.twig');
+    }
+    
+    public function loginAction()
+    {
+        return $this->render('BlogBundle:Page:login.html.twig');
+    }
+    
+    public function profileAction()
+    {
+        return $this->render('BlogBundle:Page:profile.html.twig');
+    }
 }

@@ -1,6 +1,26 @@
-# src/Blogger/BlogBundle/Resources/config/routing.yml
+# src/BlogBundle/Resources/config/routing.yml
 BlogBundle_homepage:
     pattern:  /
     defaults: { _controller: BlogBundle:Page:index }
+    requirements:
+        _method:  GET
+        
+
+BlogBundle_inscrption:
+    pattern:  /register
+    defaults: { _controller: BlogBundle:Page:register }
+    requirements:
+        _method:  GET
+        
+    
+BlogBundle_login:
+    pattern:  /login
+    defaults: { _controller: BlogBundle:Page:login }
+    requirements:
+        _method:  GET
+        
+BlogBundle_profile:
+    pattern:  /profile
+    defaults: { _controller: BlogBundle:Page:profile }
     requirements:
         _method:  GET
