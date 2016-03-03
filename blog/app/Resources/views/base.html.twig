@@ -11,8 +11,8 @@
     {% block stylesheets %}
     <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
-    <link href="{{ asset('bundles/blog/css/screen.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('bundles/blog/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/blog/css/screen.css') }}" type="text/css" rel="stylesheet" />
     {% endblock %}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 </head>
@@ -33,6 +33,21 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ path('BlogBundle_homepage') }}">Accueil</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catégories <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Catégorie 1</a></li>
+                            <li><a href="#">Catégorie 2</a></li>
+                            <li><a href="#">Catégorie 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav menu">
+                    <li>
+                        {% if app.user is not null %}
+                            <a href="{{ path('BlogBundle_profile') }}"> {{ app.user.username}}</a>
+                        {% endif %}
+                    </li>
                     <li>
                         {% if app.user is not null %}
                            <a href="{{ path('BlogBundle_logout') }}">Déconnexion</a>
@@ -44,19 +59,6 @@
                         {% if app.user is null %}
                             <a href="{{ path('BlogBundle_login') }}">Connexion</a>
                         {% endif%}
-                    </li>
-                    <li>
-                        {% if app.user is not null %}
-                            <a href="{{ path('BlogBundle_profile') }}"> {{ app.user.username}}</a>
-                        {% endif %}
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catégories <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Catégorie 1</a></li>
-                            <li><a href="#">Catégorie 2</a></li>
-                            <li><a href="#">Catégorie 3</a></li>
-                        </ul>
                     </li>
                 </ul>
             </div>

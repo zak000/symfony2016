@@ -6,17 +6,15 @@
     <header>
         <h1>Créer Votre Compte</h1>
     </header>
+    <br>
     <div class="container">
     	<div class="row">
-        	<div class="col-lg-4 col-md-4 col-sm-4">
-        	</div>
-        	<div class="col-lg-4 col-md-4 col-sm-4">
-        	</div>
-        	<div class="col-lg-4 col-md-4 col-sm-4">
+        	<div class="col-lg-4 col-md-5 col-sm-5 col-xs-8">
+        		{{ render(controller('FOSUserBundle:Registration:register')) }}
         	</div>
     	</div>
     </div>
     
-{{ render(controller('FOSUserBundle:Registration:register')) }}
+
 
 {% endblock %}
