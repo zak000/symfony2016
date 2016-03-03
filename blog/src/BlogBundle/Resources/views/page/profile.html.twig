@@ -1,13 +1,11 @@
-
 {% extends 'BlogBundle::layout.html.twig' %}
 
+{% block title %}Contact{% endblock%}
+
 {% block body %}
-    <header>
-        <h1>Mon Profile</h1>
-    </header>    
-
-
-
+    Nom d'utilisateur : {{ app.user.username }}<br />
+    Adresse e-mail : {{ app.user.email }}<br />
+    <a href="{{ path('fos_user_profile_edit') }}">Editer</a>
 {% endblock %}
 
 
