@@ -11,8 +11,15 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\HasLifecycleCallbacks
  * @ORM\Entity
  */
+
 class Article
 {
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="article", cascade={"remove", "persist"})
+    */
+    protected $comments;
+
     /**
      * @var int
      */

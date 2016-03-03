@@ -11,6 +11,13 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Comment
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Article", inversedBy="comments", cascade={"remove"})
+     * @ORM\JoinColumn(name="article_id", referencedColumnName="id")
+    */
+    protected $article; 
+
     /**
      * @var int
      */
