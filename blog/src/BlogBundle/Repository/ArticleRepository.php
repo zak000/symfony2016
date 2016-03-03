@@ -12,4 +12,20 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticleRepository extends EntityRepository
 {
+    
+    public function recherche($chaine)
+    {
+        
+        $qb = $this->createQueryBuilder('u')
+        
+        ->select('u')
+        ->where('u.title like :chaine')
+        ->orderBy('u.id')
+        ->setParameter('chaine', $chaine);
+        
+        return $qb->getQuery()->getResult();
+        
+    }
+    
+    
 }

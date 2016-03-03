@@ -137,11 +137,28 @@ class ArticleController extends Controller
         ));
     }
     
-    public function rechercheTraitementAction($chaine)
+    public function rechercheTraitementAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $articles = $em->getRepository('BlogBundle:Article')->recherche($chaine);
+        
+        $form= $this->createForm(new RechercheType());
+        
+        if($this->get('request')->getMethod()=='POST')
+        {
+            $form->bind($this->get('request'));
+            $em = $this->getDoctrine()->getManager();
+            
+            $articles = $em->getRepository('BlogBundle:Article')->recherche($form['recherche']->getData());
 
+           // echo $form['recherche']->getData();
+            
+            
+            
+            
+        }
+        
+       //pour le test die();
+        $em = $this->getDoctrine()->getManager();
+        
         return $this->render('article/index.html.twig', array(
             'articles' => $articles,
         ));
