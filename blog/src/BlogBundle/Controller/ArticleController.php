@@ -62,6 +62,9 @@ class ArticleController extends Controller
      */
     public function showAction(Article $article)
     {
+
+        $em = $this->getDoctrine()->getManager();
+
         $deleteForm = $this->createDeleteForm($article);
         $comments = $em->getRepository('BlogBundle:Comment')->findAll();
 
