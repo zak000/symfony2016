@@ -12,7 +12,7 @@
     <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
     <link href="{{ asset('bundles/blog/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('bundles/blog/css/screen.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/blog/css/style.css') }}" type="text/css" rel="stylesheet" />
     {% endblock %}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 </head>
@@ -43,7 +43,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav menu">
-             
+                    <li id="recherche">{% render(controller('BlogBundle:Article:recherche')) %}</li>
                     <li>
                         {% if app.user is not null %}
                             <a href="{{ path('BlogBundle_profile') }}"> {{ app.user.username}}</a>
@@ -58,7 +58,6 @@
                     </li>
                     <li>
                         {% if app.user is null %}
-                            <li>{% render(controller('BlogBundle:Article:recherche')) %}</li>
                             <a href="{{ path('BlogBundle_login') }}">Connexion</a>
                         {% endif%}
                     </li>
