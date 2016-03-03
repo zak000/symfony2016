@@ -32,3 +32,9 @@ p
     color: black;
 }
 
+#fos_user_registration_form input, form #username, form #password{
+	float:right;
+}
+form label{
+	margin: 5px 0;
+}
