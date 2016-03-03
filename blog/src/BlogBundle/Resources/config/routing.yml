@@ -34,5 +34,6 @@ blog_article:
     prefix:   /article
 
 blog_homepage:
-    path:     /
-    defaults: { _controller: BlogBundle:Default:index }
+    path:     /recherche
+    defaults: { _controller: BlogBundle:Article:recherche }
+

@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use BlogBundle\Entity\Article;
 use BlogBundle\Form\ArticleType;
+use BlogBundle\Form\RechercheType;
 
 /**
  * Article controller.
@@ -124,5 +125,27 @@ class ArticleController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+    
+    public function rechercheAction()
+        
+    {
+        $form= $this->createForm(new RechercheType());
+
+         return $this->render('article/recherche.html.twig', array(
+           'form'=>$form->createView(),
+        ));
+    }
+    
+    public function rechercheTraitementAction($chaine)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository('BlogBundle:Article')->recherche($chaine);
+
+        return $this->render('article/index.html.twig', array(
+            'articles' => $articles,
+        ));
+        
+        
     }
 }
