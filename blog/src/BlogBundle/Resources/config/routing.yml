@@ -5,14 +5,12 @@ BlogBundle_homepage:
     requirements:
         _method:  GET
         
-
 BlogBundle_inscrption:
     pattern:  /register
     defaults: { _controller: BlogBundle:Page:register }
     requirements:
         _method:  GET
         
-    
 BlogBundle_login:
     pattern:  /login
     defaults: { _controller: BlogBundle:Page:login }
