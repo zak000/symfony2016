@@ -39,14 +39,10 @@
                             </li>
                             <li>
                                 {% if app.user is not null %}
-                                    <a href="{{ path('BlogBundle_profile') }}">Profile</a>
+                                    <a href="{{ path('BlogBundle_profile') }}"> {{ app.user.username}}</a>
                                 {% endif %}
                             </li>
-                            <li>
-                                {% if app.user is not null %}
-                                    {{ app.user.username}}
-                                {% endif%}
-                            </li>
+
                             
                             
                     </ul>
