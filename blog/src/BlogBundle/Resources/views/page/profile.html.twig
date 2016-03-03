@@ -6,7 +6,9 @@
         <h1>Mon Profil</h1>
     </header>    
 
-
+Nom de l'utilisatueur : {{ app.user.username }}<br/>
+Adressse mail : {{app.user.email}}<br/>
+<a href="{{ path ('fos_user_profile_edit')}}">Editer le profil</a>
 
 {% endblock %}
 
