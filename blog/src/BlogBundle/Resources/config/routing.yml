@@ -4,27 +4,35 @@ BlogBundle_homepage:
     defaults: { _controller: BlogBundle:Page:index }
     requirements:
         _method:  GET
-        
+
 BlogBundle_inscrption:
     pattern:  /register
     defaults: { _controller: BlogBundle:Page:register }
     requirements:
         _method:  GET
-        
+
 BlogBundle_login:
     pattern:  /login
     defaults: { _controller: BlogBundle:Page:login }
     requirements:
         _method:  GET
-        
+
 BlogBundle_profile:
     pattern:  /profile
     defaults: { _controller: BlogBundle:Page:profile }
     requirements:
         _method:  GET
-        
+
 BlogBundle_logout:
     pattern:  /logout
     defaults: { _controller: BlogBundle:Page:index }
     requirements:
         _method:  GET
+
+blog_article:
+    resource: "@BlogBundle/Resources/config/routing/article.yml"
+    prefix:   /article
+
+blog_homepage:
+    path:     /
+    defaults: { _controller: BlogBundle:Default:index }
