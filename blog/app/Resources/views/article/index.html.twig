@@ -39,9 +39,22 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('article_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    <h1>Last 5 Comments </h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Content</th>
+                <th>Createdat</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.content }}</td>
+                <td>{% if comment.createdAt %}{{ comment.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

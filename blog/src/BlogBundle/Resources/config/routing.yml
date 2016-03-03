@@ -5,6 +5,10 @@ BlogBundle_homepage:
     requirements:
         _method:  GET
 
+blog_comment:
+    resource: "@BlogBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment
+
 BlogBundle_inscrption:
     pattern:  /register
     defaults: { _controller: BlogBundle:Page:register }

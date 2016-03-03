@@ -23,9 +23,11 @@ class ArticleController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $articles = $em->getRepository('BlogBundle:Article')->findAll();
+        $comments = $em->getRepository('BlogBundle:Comment')->findAll();
 
         return $this->render('article/index.html.twig', array(
             'articles' => $articles,
+            'comments' => $comments,
         ));
     }
 
@@ -60,9 +62,11 @@ class ArticleController extends Controller
     public function showAction(Article $article)
     {
         $deleteForm = $this->createDeleteForm($article);
+        $comments = $em->getRepository('BlogBundle:Comment')->findAll();
 
         return $this->render('article/show.html.twig', array(
             'article' => $article,
+            'comments' => $comments,
             'delete_form' => $deleteForm->createView(),
         ));
     }
