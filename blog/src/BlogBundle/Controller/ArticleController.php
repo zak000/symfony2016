@@ -165,9 +165,11 @@ class ArticleController extends Controller
         
        //pour le test die();
         $em = $this->getDoctrine()->getManager();
-        
+        $comments = $em->getRepository('BlogBundle:Comment')->findAll();
+
         return $this->render('article/index.html.twig', array(
             'articles' => $articles,
+            'comments' => $comments
         ));
         
         
