@@ -8,8 +8,15 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="article")
  */
+
 class Article
 {
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="article", cascade={"remove", "persist"})
+    */
+    protected $comments;
+
     /**
      * @var int
      */
