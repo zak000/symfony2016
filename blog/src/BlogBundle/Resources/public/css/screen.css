@@ -32,3 +32,23 @@ p
     color: black;
 }
 
+#fos_user_registration_form input, form #username, form #password{
+	float:right;
+}
+form label{
+	margin: 5px 0;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+	.menu{
+		float:left !important;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 768px) {
+	.menu{
+		float:right !important;
+	}
+}

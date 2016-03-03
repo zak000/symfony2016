@@ -1,7 +1,15 @@
-
 {% extends 'BlogBundle::layout.html.twig' %}
 
-
 {% block body %}
-{{ render(controller('FOSUserBundle:Security:login')) }}
+	<header>
+        <h1>Connectez vous</h1>
+    </header>
+    <br>
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-4 col-md-5 col-sm-5 col-xs-8">
+        		{{ render(controller('FOSUserBundle:Security:login')) }}
+        	</div>
+    	</div>
+    </div>
 {% endblock %}
