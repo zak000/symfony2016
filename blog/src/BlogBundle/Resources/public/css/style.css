@@ -26,3 +26,15 @@ form label{
 		float:right !important;
 	}
 }
+
+
+#recherche form{
+    margin-top: 12px;
+}
+
+#recherche .btn{
+    padding: 2px 8px;
+}
+#recherche #BlogBundle_recherche_recherche{
+    padding-bottom:3px;
+}
