@@ -21,6 +21,7 @@
                 <th>Is Published</th>
                 <td>{{ article.isPublished }}</td>
             </tr>
+            
             <tr>
                 <th>Createdat</th>
                 <td>{% if article.createdAt %}{{ article.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
@@ -28,7 +29,7 @@
             <tr>
                 <th>Image</th>
                 <td align="center" valign="top">
-                    <img src="{{ asset('upload/' ~ article.id ~'/' ~ article.image)}}" alt="" height="525" width="666" />
+                   <img src="{{ asset('/../../../../web/upload/' ~ article.id ~'/' ~ article.image)}}" alt="" height="525" width="666" />
                 </td>
             </tr>
         </tbody>

@@ -10,6 +10,7 @@ use BlogBundle\Form\ArticleType;
 use BlogBundle\Form\RechercheType;
 use BlogBundle\Entity\Comment;
 
+
 /**
  * Article controller.
  *
@@ -87,9 +88,8 @@ class ArticleController extends Controller
      * Finds and displays a Article entity.
      *
      */
-    public function showAction(Article $article)
+    public function showAction(Request $request, Article $article, $id )
     {
-
         $comment = new Comment();
 
         $comment_form = $this->createForm('BlogBundle\Form\CommentType', $comment, array(
@@ -97,10 +97,7 @@ class ArticleController extends Controller
         ));
 
         $em = $this->getDoctrine()->getManager();
- $article = $em->getRepository('BlogBundle:Article')->find($id);
-        if (!$article) {
-            throw $this->createNotFoundException('Unable to find Article entity.');
-        }
+
         $deleteForm = $this->createDeleteForm($article);
         $comments = $article->getComments();
 
@@ -110,6 +107,7 @@ class ArticleController extends Controller
             'delete_form' => $deleteForm->createView(),
             'comment_form' => $comment_form->createView(),
         ));
+    
     }
 
     /**

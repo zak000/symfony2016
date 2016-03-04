@@ -20,13 +20,15 @@ class ArticleType extends AbstractType
             ->add('isPublished')
             ->add('content')
             ->add('createdAt', 'datetime')
-            ->add('image')
-        ;
+            ->add('image', 'file', array(
+                'data_class' => null
+            )
+        );
     }
     
     public function getName()
     {
-        return 'xxx_articletype';
+        return 'blogBundle_articletype';
     }
     
     /**
