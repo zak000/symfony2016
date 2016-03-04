@@ -250,13 +250,18 @@ class Article
         unlink($this->getFullImagePath());
         rmdir($this->getUploadRootDir());
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 6ebf546b90c784360047d5b32562b661db1efc54
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     /**

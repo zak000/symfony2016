@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Article creation</h1>
+
+    <h1>Création d'un article</h1>
 
     {{ form_start(form) }}
         
@@ -16,4 +17,15 @@
             <a href="{{ path('article_index') }}">Back to the list</a>
         </li>
     </ul>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-5 col-xs-8">
+                {{ form_widget(form) }}
+            </div>
+        </div>
+        <br>
+        <input class="btn btn-info" type="submit" value="Enregister" />
+        <a class="btn btn-info" href="{{ path('article_index') }}">Retourner aux articles</a>
+    {{ form_end(form) }}
+
 {% endblock %}
