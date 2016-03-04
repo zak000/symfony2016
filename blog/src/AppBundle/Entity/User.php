@@ -2,25 +2,24 @@
 
 namespace AppBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * User
+ *
  * @ORM\Table(name="fos_user")
+ * @ORM\Entity
  */
-class User extends BaseUser
+class User
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    protected $id;
+    private $id;
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
+
 }

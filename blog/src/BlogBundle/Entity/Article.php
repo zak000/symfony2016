@@ -5,12 +5,21 @@ namespace BlogBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * Article
+ *
  * @ORM\Table(name="article")
+ * @ORM\Entity(repositoryClass="BlogBundle\Repository\ArticleRepository")
  */
-
 class Article
 {
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
     /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="article", cascade={"remove", "persist"})
@@ -18,30 +27,33 @@ class Article
     protected $comments;
 
     /**
-     * @var int
-     */
-    private $id;
-
-    /**
      * @var boolean
+     *
+     * @ORM\Column(name="isPublished", type="boolean")
      */
     private $isPublished;
 
-
     /**
      * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="content", type="string", length=255)
      */
     private $content;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
+
 
 
     /**
@@ -55,9 +67,9 @@ class Article
     }
 
     /**
-     * Set is_published
+     * Set isPublished
      *
-     * @param boolean $is_published
+     * @param boolean $isPublished
      * @return Article
      */
     public function setIsPublished($isPublished)
@@ -68,7 +80,7 @@ class Article
     }
 
     /**
-     * Get is_published
+     * Get isPublished
      *
      * @return boolean 
      */
@@ -144,5 +156,45 @@ class Article
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \BlogBundle\Entity\Comment $comments
+     * @return Article
+     */
+    public function addComment(\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \BlogBundle\Entity\Comment $comments
+     */
+    public function removeComment(\BlogBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }
