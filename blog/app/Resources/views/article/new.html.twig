@@ -4,19 +4,13 @@
     <h1>Article creation</h1>
 
     {{ form_start(form) }}
+        
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
+        
     {{ form_end(form) }}
     
-    
-    <form action="{{ path('basearticle_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button class="btn btn-primary" type="submit">Create</button>
-    </p>
-</form>
-- See more at: http://symfony2.ylly.fr/upload-file-with-doctrine-in-symfony2-jordscream/#sthash.6ug42JDU.dpuf
-
+   
     <ul>
         <li>
             <a href="{{ path('article_index') }}">Back to the list</a>

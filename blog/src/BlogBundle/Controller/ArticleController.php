@@ -64,7 +64,10 @@ class ArticleController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-
+ $article = $em->getRepository('BlogBundle:Article')->find($id);
+        if (!$article) {
+            throw $this->createNotFoundException('Unable to find Article entity.');
+        }
         $deleteForm = $this->createDeleteForm($article);
         $comments = $em->getRepository('BlogBundle:Comment')->findAll();
 
@@ -157,11 +160,7 @@ class ArticleController extends Controller
             $articles = $em->getRepository('BlogBundle:Article')->recherche($form['recherche']->getData());
 
            // echo $form['recherche']->getData();
-            
-            
-            
-            
-        }
+       }
         
        //pour le test die();
         $em = $this->getDoctrine()->getManager();
@@ -172,4 +171,31 @@ class ArticleController extends Controller
         
         
     }
+    
+    
+    
+     public function createAction()
+    {
+        $article  = new Article();
+        $request = $this->getRequest();
+        $form    = $this->createForm(new ArticleType(), $article);
+        $form->bindRequest($request);
+ 
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($article);
+            $em->flush();
+ 
+            return $this->redirect($this->generateUrl('article_show', array('id' => $article->getId())));
+ 
+        }
+ 
+        return $this->render('blogBundle:Article:new.html.twig', array(
+            'article' => $article,
+            'form'   => $form->createView()
+        ));
+    }
+
+    
+    
 }

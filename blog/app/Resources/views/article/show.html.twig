@@ -25,16 +25,15 @@
                 <th>Createdat</th>
                 <td>{% if article.createdAt %}{{ article.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
+            <tr>
+                <th>Image</th>
+                <td align="center" valign="top">
+                    <img src="{{ asset('upload/' ~ article.id ~'/' ~ article.image)}}" alt="" height="525" width="666" />
+                </td>
+            </tr>
         </tbody>
     </table>
 
-   <table>
- <tr>
-      <td align="center" valign="top"><img src="{{ asset('upload/' ~ entity.id ~'/' ~ entity.image)}}" alt="" height="525" width="666" /></td>
-</tr>
-</table>
-- See more at: http://symfony2.ylly.fr/upload-file-with-doctrine-in-symfony2-jordscream/#sthash.6ug42JDU.dpuf
-   
     <ul>
         <li>
             <a href="{{ path('article_index') }}">Back to the list</a>
