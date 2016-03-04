@@ -1,8 +1,17 @@
 {% extends 'BlogBundle::layout.html.twig' %}
 
 {% block body %}
+    <header>
+        <h1>Modifier vos informations</h1>
+    </header>
+    <br>
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-4 col-md-5 col-sm-6 col-xs-8">
+        		{% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+        	</div>
+    	</div>
+    </div>
 
-<h1>Modifier vos informations</h1>
-{% include "FOSUserBundle:Profile:edit_content.html.twig" %}
 
 {% endblock %}
