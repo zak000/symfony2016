@@ -74,6 +74,10 @@ form label{
 .contenuArticle{
 	margin-bottom: 10px;
 }
+.comment{
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
 .comment .row{
 	margin:-10px;
 	padding: 10px;
@@ -90,8 +94,12 @@ form label{
 	margin-left: 25px;
 }
 
-
-
+.retournerArticle {
+	margin-top: 20px;
+}
+.retournerArticle a{
+	float: right;
+}
 
 
 
