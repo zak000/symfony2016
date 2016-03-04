@@ -1,6 +1,12 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/book/security.html
 security:
+
+    access_control:
+        - { path: edit$, roles: ROLE_USER }
+        - { path: new$, roles: ROLE_USER }
+        - { path: delete$, roles: ROLE_USER }
+
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
@@ -27,7 +33,6 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
-                
 
             logout:       true
             anonymous:    true
