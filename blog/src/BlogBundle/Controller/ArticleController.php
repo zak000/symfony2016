@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Article;
 use BlogBundle\Form\ArticleType;
 use BlogBundle\Form\RechercheType;
+use BlogBundle\Entity\Comment;
 
 /**
  * Article controller.
@@ -57,21 +58,54 @@ class ArticleController extends Controller
     }
 
     /**
+     * Creates a new Comment entity.
+     *
+     */
+    public function newCommentAction(Request $request, Article $article) {
+        $comment = new Comment();
+
+        $comment->setArticle($article);
+
+        $form = $this->createForm('BlogBundle\Form\CommentType', $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comment);
+            $em->flush();
+
+            return $this->redirectToRoute('article_show', array('id' => $article->getId()));
+        }
+
+        return $this->render('comment/new.html.twig', array(
+            'comment' => $comment,
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
      * Finds and displays a Article entity.
      *
      */
     public function showAction(Article $article)
     {
 
+        $comment = new Comment();
+
+        $comment_form = $this->createForm('BlogBundle\Form\CommentType', $comment, array(
+            'action' => $this->generateUrl('comment_new', ['id' => $article->getId()]),
+        ));
+
         $em = $this->getDoctrine()->getManager();
 
         $deleteForm = $this->createDeleteForm($article);
-        $comments = $em->getRepository('BlogBundle:Comment')->findAll();
+        $comments = $article->getComments();
 
         return $this->render('article/show.html.twig', array(
             'article' => $article,
             'comments' => $comments,
             'delete_form' => $deleteForm->createView(),
+            'comment_form' => $comment_form->createView(),
         ));
     }
 
