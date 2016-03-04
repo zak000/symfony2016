@@ -157,12 +157,14 @@ class Article
     {
         return $this->createdAt;
     }
+
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     /**
