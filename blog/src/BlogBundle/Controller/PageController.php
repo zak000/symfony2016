@@ -26,6 +26,13 @@ class PageController extends Controller
     
     public function profileAction()
     {
-        return $this->render('BlogBundle:Page:profile.html.twig');
+        // Load the stuff to connect
+        $securityContext = $this->container->get('security.authorization_checker');
+        if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            return $this->render('BlogBundle:Page:profile.html.twig');
+        }
+        else {
+            return $this->render('BlogBundle:Page:login.html.twig');
+        }
     }
 }
