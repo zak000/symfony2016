@@ -47,4 +47,38 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+    <h1> Comments </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Content</th>
+                <th>Createdat</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.content }}</td>
+                <td>{% if comment.createdAt %}{{ comment.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h1> New Comment </h1>
+
+    <h1>New comment for this article:</h1>
+
+    {{ form_start(comment_form) }}
+        {{ form_widget(comment_form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(comment_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('comment_index') }}">Back to the list</a>
+        </li>
+    </ul>
+
 {% endblock %}

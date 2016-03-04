@@ -15,18 +15,37 @@ form label{
 
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-	.menu{
-		float:left !important;
+	.profil span{
+		float: none;
+	}
+	#fos_user_profile_form input{
+		float:right;
 	}
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 768px) {
+	.profil span{
+		float: right;
+	}
+	#fos_user_profile_form input{
+		float:right;
+	}
+}
+/*************		MENU	*****/
+@media (max-width: 992px) {
 	.menu{
-		float:right !important;
+		float:left;
 	}
 }
 
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.menu{
+		float:right;
+	}
+}
+/*************		END MENU	*****/
 
 #recherche form{
     margin-top: 12px;
